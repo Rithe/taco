@@ -5,7 +5,6 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import androidx.lifecycle.map
 import com.candybytes.taco.api.TacoService
 import timber.log.Timber
 
@@ -20,7 +19,7 @@ class CategoriesViewModel @ViewModelInject constructor(
         } catch (e: Exception) {
             Timber.e(e)
         }
-    }.map { "Loaded ${it.size} categories\nImplement a list view and show all category elements." }
+    }
 
 
 }
