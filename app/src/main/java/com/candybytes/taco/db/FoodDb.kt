@@ -5,7 +5,6 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.candybytes.taco.vo.Category
 import com.candybytes.taco.vo.Food
-import com.candybytes.taco.vo.Nutrient
 
 
 /**

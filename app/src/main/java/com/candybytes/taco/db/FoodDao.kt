@@ -1,5 +1,6 @@
 package com.candybytes.taco.db
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -17,5 +18,8 @@ interface FoodDao {
 
     @Query("SELECT * FROM food")
     suspend fun getAllAsync(): List<Food>
+
+    @Query("SELECT * FROM food ORDER BY id ASC")
+    fun getAllPaged(): PagingSource<Int, Food>
 
 }
