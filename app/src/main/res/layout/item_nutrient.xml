@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="nutrient"
+            type="com.candybytes.taco.vo.Nutrient" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_space_horizontal"
+        android:paddingTop="@dimen/default_space_vertical"
+        android:paddingEnd="@dimen/default_space_horizontal"
+        android:paddingBottom="@dimen/default_space_vertical">
+
+        <TextView
+            android:id="@+id/nutrient_name"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Protein" />
+
+        <TextView
+            android:id="@+id/nutrient_value"
+            style="?attr/textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{nutrient.qty + ' ' + nutrient.unit}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2.58 g" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

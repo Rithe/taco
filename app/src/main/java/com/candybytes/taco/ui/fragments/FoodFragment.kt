@@ -17,7 +17,6 @@ class FoodFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mainViewModel.showBottomBar to false
         return inflater.inflate(R.layout.fragment_food, container, false)
     }
 }

@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.FoodFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.fragments.FoodFragment">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/food_detail_bg"
+            android:contentDescription="@string/desc"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_taco"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/image_add_btn"
+            android:layout_width="@dimen/circle_button_size"
+            android:layout_height="@dimen/circle_button_size"
+            android:layout_marginEnd="@dimen/default_space_horizontal"
+            android:background="@drawable/shape_button_red_circle"
+            android:contentDescription="@string/desc"
+            android:elevation="10dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@id/food_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_image" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/category_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_space_horizontal"
+            android:layout_marginTop="46dp"
+            android:background="@drawable/shape_button_white_rectangle"
+            android:letterSpacing="0.1"
+            android:paddingStart="@dimen/default_space_horizontal"
+            android:paddingTop="@dimen/default_space_vertical"
+            android:paddingEnd="@dimen/default_space_horizontal"
+            android:paddingBottom="@dimen/default_space_vertical"
+            android:text="@string/category"
+            android:textColor="#00796B"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_image" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/food_nutrition_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/category_btn"
+            app:layout_constraintVertical_weight="1"
+            tools:listitem="@layout/item_nutrient" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+</layout>
