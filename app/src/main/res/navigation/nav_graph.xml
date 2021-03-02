@@ -32,6 +32,10 @@
         <action
             android:id="@+id/action_foodFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <argument
+            android:name="food"
+            app:argType="com.candybytes.taco.vo.FoodDTO" />
+
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"

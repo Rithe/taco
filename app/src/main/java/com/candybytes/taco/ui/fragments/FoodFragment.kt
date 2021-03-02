@@ -5,18 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.candybytes.taco.R
-import com.candybytes.taco.ui.vm.MainViewModel
+import androidx.navigation.fragment.navArgs
+import com.candybytes.taco.databinding.FragmentFoodBinding
+import timber.log.Timber
 
 class FoodFragment : Fragment() {
-
-    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_food, container, false)
+    ): View {
+        return FragmentFoodBinding.inflate(inflater, container, false).apply {
+
+        }.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val args: FoodFragmentArgs by navArgs()
+        val food = args.food
+        Timber.d(food.dishName)
     }
 }
