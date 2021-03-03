@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:layout_behavior=".ui.util.ScrollingViewWithBottomNavigationBehavior"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -45,6 +45,8 @@
             android:layout_gravity="bottom"
             app:goneUnless="@{viewModel.showBottomBar}"
             app:labelVisibilityMode="auto"
+            app:layout_behavior=".ui.util.BottomNavigationBehavior"
+            app:layout_scrollFlags="enterAlways|scroll"
             app:menu="@menu/main_bottom_bar" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
