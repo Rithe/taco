@@ -23,7 +23,10 @@ class SearchFoodFragment : Fragment() {
     private val adapter = FoodListAdapter(
         showDetails = { food ->
             findNavController().navigate(
-                SearchFoodFragmentDirections.actionSearchFoodFragmentToFoodFragment(food)
+                SearchFoodFragmentDirections.actionSearchFoodFragmentToFoodFragment(
+                    food,
+                    food.dishName
+                )
             )
         }
     )

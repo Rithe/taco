@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/foodFragment"
         android:name="com.candybytes.taco.ui.fragments.FoodFragment"
-        android:label="fragment_food"
+        android:label="{title}"
         tools:layout="@layout/fragment_food">
         <action
             android:id="@+id/action_foodFragment_to_categoryFragment"
@@ -35,16 +35,22 @@
         <argument
             android:name="food"
             app:argType="com.candybytes.taco.vo.FoodDTO" />
+        <argument
+            android:name="title"
+            app:argType="string" />
 
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.candybytes.taco.ui.fragments.CategoryFragment"
-        android:label="fragment_category"
+        android:label="{title}"
         tools:layout="@layout/fragment_category">
         <action
             android:id="@+id/action_categoryFragment_to_foodFragment"
             app:destination="@id/foodFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 
 </navigation>
